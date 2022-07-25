@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Galerija";
+}
+@*<div class="mx-auto hedr">
+
+</div>*@
+<div class="teloGalerija mb-5">
+    <div class="container">
+        <div style="text-align:center">
+            <h1 class="text-dark">Galerija</h1>
+        </div>
+        <div class="card-deck">
+            <div class="card m-4 mx-auto" style="min-width: 18rem; max-width:30.5%;">
+                <div class="single-content" id="gal">
+                    <img src="~/images/sl1.jpg" class="card-img" asp-append-version="true">
+                    <div class="text-content">
+                        <h3>Stare slike</h3>
+                        <br />
+                        <a asp-action="stareSlike" asp-controller="home" class="btn btn-light btn-sm font-weight-bold" style="font-size:20px">Pogledaj</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-4 mx-auto" style="min-width: 18rem; max-width:30.5%;">
+                <div class="single-content" id="gal">
+                    <img src="~/images/sl2.jpeg" class="card-img" asp-append-version="true">
+                    <div class="text-content">
+                        <h3>Fotografije</h3>
+                        <br />
+                        <a asp-action="savremeneSlike" asp-controller="home" class="btn btn-light btn-sm font-weight-bold" style="font-size:20px">Pogledaj</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-4 mx-auto" style="min-width: 18rem; max-width:30.5%;">
+                <div class="single-content" id="gal">
+                    <img src="~/images/sl3.jpeg" class="card-img" asp-append-version="true">
+                    <div class="text-content">
+                        <h3>Umjetničke slike</h3>
+                        <br />
+                        <a asp-action="umjetnickeSlike" asp-controller="home" class="btn btn-light btn-sm font-weight-bold" style="font-size:20px">Pogledaj</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="mx-auto hedr">
+
+</div>*@

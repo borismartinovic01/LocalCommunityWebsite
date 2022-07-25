@@ -1,0 +1,91 @@
+﻿@model DokumentCreateViewModel
+@{
+    ViewBag.Title = "DokumentCreate";
+}
+<div class="telo">
+    <form enctype="multipart/form-data" asp-controller="administration" asp-action="DokumentCreate" method="post" class="mt-3">
+        <div class="form-group row">
+            <label asp-for="Naslov" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Naslov" class="form-control" placeholder="Naslov" />
+                <span asp-validation-for="Naslov" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Opis" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <textarea class="form-control" rows="4" asp-for="Opis"></textarea>
+                <span asp-validation-for="Opis" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row mt-4">
+            <label asp-for="Slika1" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input asp-for="Slika1" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Izaberite sliku 1...</label>
+                    <span asp-validation-for="Slika1" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row mt-4">
+            <label asp-for="Slika2" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input asp-for="Slika2" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Izaberite sliku 2...</label>
+                    <span asp-validation-for="Slika2" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row mt-4">
+            <label asp-for="Slika3" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input asp-for="Slika3" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Izaberite sliku 3...</label>
+                    <span asp-validation-for="Slika3" class="text-danger"></span>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group row mt-4">
+            <label asp-for="Slika4" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input asp-for="Slika4" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Izaberite sliku 4...</label>
+                    <span asp-validation-for="Slika4" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row mt-4">
+            <label asp-for="Slika5" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input asp-for="Slika5" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Izaberite sliku 5...</label>
+                    <span asp-validation-for="Slika5" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="mx-auto">
+                <button type="submit" class="btn btn-primary m-1">Postavi</button>
+                <a asp-action="Dokumenti" asp-controller="home" class="btn btn-danger text-white m-1">Odustani</a>
+            </div>
+        </div>
+        @section Scripts{
+            <script>
+                $(document).ready(function () {
+                    $('.custom-file-input').on("change", function () {
+                        var fileName = $(this).val().split("\\").pop();
+                        $(this).next('.custom-file-label').html(fileName);
+                    });
+                });
+            </script>
+        }
+    </form>
+</div>

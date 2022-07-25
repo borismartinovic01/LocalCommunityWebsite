@@ -1,0 +1,168 @@
+﻿@inject SignInManager<IdentityUser> signInManager;
+@{ 
+    ViewBag.Name = "@awax.code";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <environment include="Development">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175585306-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-175585306-1');
+        </script>
+
+        <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <script src="~/lib/baguettebox.js/baguetteBox.min.js"></script>
+        <link href="~/lib/baguettebox.js/baguetteBox.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <script src="~/lib/pdf.js/pdf.min.js"></script>
+        <script data-ad-client="ca-pub-1290635129766303" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175585306-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-175585306-1');
+        </script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"
+              asp-fallback-href="~/lib/bootstrap/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute"
+              asp-suppress-fallback-integrity="true" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <script src="~/lib/baguettebox.js/baguetteBox.min.js"></script>
+        <link href="~/lib/baguettebox.js/baguetteBox.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <script src="~/lib/pdf.js/pdf.min.js"></script>
+        <script data-ad-client="ca-pub-1290635129766303" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </environment>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-custom fixed-top navbar-dark bg-success" id="myNavbar">
+        <a class="navbar-brand" asp-controller="home" asp-action="index">
+            Brajići.me
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon">
+
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a asp-controller="home" asp-action="index" class="nav-link">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="home" asp-action="vesti" class="nav-link">Vijesti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="tekstovi" asp-controller="home">Istorija</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="topopriroda" asp-controller="home">Priroda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="galerija" asp-controller="home">Galerija</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="linkovi" asp-controller="home">Linkovi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="atrakcije" asp-controller="home">Atrakcije</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="sponzori" asp-controller="home">Sponzori</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" id="kontakt">
+                    <a class="nav-link" asp-action="kontakt" asp-controller="home">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="page-footer bg-dark">
+        <div class="container text-center text-md-left mt-10">
+            <br />
+            <div class="row">
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold text-white">Brajići</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:62px; height:2px" />
+                    <p class="mt-2 text-white">
+                        U prošlosti vjekovima na granici civlizacija, carstava, država, danas na granici održivog razvoja.
+                    </p>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold text-white">Početna</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:77px; height:2px" />
+                    <ul class="list-unstyled">
+                        <li class="my-2"><a class="text-white" asp-action="vesti" asp-controller="home">Vijesti</a></li>
+                        <li class="my-2"><a class="text-white" asp-action="atrakcije" asp-controller="home">Atrakcije</a></li>
+                        <li class="my-2"><a class="text-white" asp-action="topopriroda" asp-controller="home">Priroda</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold text-white">Linkovi</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:67px; height:2px" />
+                    <ul class="list-unstyled">
+                        <li class="my-2"><a class="text-white" asp-action="sponzori" asp-controller="home">Sponzori</a></li>
+                        <li class="my-2"><a class="text-white" asp-action="Kontakt" asp-controller="home">Kontakt</a></li>
+                        <li class="my-2"><a class="text-white" asp-action="galerija" asp-controller="home">Galerija</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold text-white">Info</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:40px; height:2px" />
+                    <ul class="list-unstyled">
+                        <li class="my-2 text-white"><i class="fas fa-home mr-3"></i>Budva, Crna Gora</li>
+                        <li class="my-2 text-white"><i class="far fa-envelope mr-3"></i>sajtbrajici@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-2" style="background-color:#1a1717; color:#b69999">
+            <p>&copy; Copyright <a>brajici.me</a> 2020 | <a style="color: #b69999" asp-action="privacy" asp-controller="home">Privacy Policy</a></p>
+            
+            <p>Web Development And Design By @ViewBag.Name <a href="https://www.instagram.com/awax.code/" style="color:#b69999"><i class="fab fa-instagram"></i></a></p>
+            @if (signInManager.IsSignedIn(User))
+            {
+                <form method="post" asp-action="logout" asp-controller="account">
+                    <button type="submit" class="nav-link btn btn-link py-0 mx-auto" style="width:auto">
+                        Logout
+                    </button>
+                </form>
+            }
+        </div>
+    </footer>
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts", required: true)
+    }
+    <script src="~/js/CustomScript.js"></script>
+</body>
+</html>

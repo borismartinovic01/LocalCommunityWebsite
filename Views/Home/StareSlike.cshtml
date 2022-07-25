@@ -1,0 +1,70 @@
+﻿@model IEnumerable<StaraSlika>
+@inject SignInManager<IdentityUser> signInManager;
+@{
+    ViewBag.Title = "Stare slike";
+}
+@*<div class="mx-auto hedr">
+
+</div>*@
+<section class="gallery-block cards-gallery">
+    <div class="container">
+        <div class="heading">
+            <br />
+            <br />
+            <h1 class="text-dark">Stare slike</h1>
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="btn btn-primary text-white" asp-action="StaraSlikaCreate" asp-controller="administration">Dodaj sliku</a>
+            }
+        </div>
+        <div class="row">
+            @foreach (var mojModel in Model.Reverse())
+            {
+                var photoPathimg = "~/oldPictures/" + (mojModel.PhotoPath);
+                var photoPatha = "/oldPictures/" + (mojModel.PhotoPath);
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 transform-on-hover">
+                        <a class="lightbox" href="@photoPatha"><img src="@photoPathimg" class="card-img-top" asp-append-version="true" /></a>
+                        <div class="card-body">
+                            <h6>@mojModel.Naslov</h6>
+                            <p class="text-muted card-text">@mojModel.Opis</p>
+                        </div>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <div class="card-footer text-center">
+                                <form asp-action="DeleteStara" asp-controller="administration" asp-route-id="@mojModel.Id" method="post">
+                                    <a asp-action="StaraSlikaEdit" asp-controller="administration" asp-route-id="@mojModel.Id" class="btn btn-primary m-1 text-white">Izmijeni</a>
+                                    <span style="display:none" id="confirmDeleteSpan_@mojModel.Id">
+                                        <span>Jeste li sigurni?</span>
+                                        <button type="submit" class="btn btn-danger">Da</button>
+                                        <span class="btn btn-primary" onclick="confirmDelete('@mojModel.Id',false)">Ne</span>
+                                    </span>
+                                    <span id="deleteSpan_@mojModel.Id">
+                                        <span class="btn btn-danger" onclick="confirmDelete('@mojModel.Id',true)">Obriši</span>
+                                    </span>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<div class="d-flex justify-content-center">
+    <a class="btn btn-dark text-white font-weight-bold" asp-action="galerija" asp-controller="home">Nazad na galeriju</a>
+</div>
+<br />
+<br />
+@*<div class="mx-auto hedr">
+
+</div>*@
+@section Scripts{
+    <script>
+        baguetteBox.run('.cards-gallery', {
+            animation: 'fadeIn',
+            noScrollbars: true
+        });
+    </script>
+}
+

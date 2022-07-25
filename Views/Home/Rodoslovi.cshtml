@@ -1,0 +1,399 @@
+﻿@{ 
+    ViewBag.Title = "Rodoslovi";
+}
+@*<div class="mx-auto hedr">
+
+</div>*@
+<div class="container" id="rodosloviid">
+    <div class="row">
+        <div id="accordion" class="col-md-3 mb-5">
+            <div class="card">
+                <div class="card-header" id="headingOne" style="cursor:pointer" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Martinovići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">6</span>
+                    </div>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Ogranak</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td onclick="proslediExcel(this.id)" id="1e1" class="excelActive">Milanovići</td>
+                            </tr>
+                            <tr>
+                                <td onclick="proslediExcel(this.id)" id="1e2" class="" data-toggle="modal" data-target="#exampleModal">Nikčevići</td>
+                            </tr>
+                            <tr>
+                                <td onclick="proslediExcel(this.id)" id="1e3" class="" data-toggle="modal" data-target="#exampleModal">Kneževići</td>
+                            </tr>
+                            <tr>
+                                <td onclick="proslediExcel(this.id)" id="1e4" class="" data-toggle="modal" data-target="#exampleModal">Ogranak 4</td>
+                            </tr>
+                            <tr>
+                                <td onclick="proslediExcel(this.id)" id="1e5" class="" data-toggle="modal" data-target="#exampleModal">Ogranak 5</td>
+                            </tr>
+                            <tr>
+                                <td onclick="proslediExcel(this.id)" id="1e6" class="" data-toggle="modal" data-target="#exampleModal">Ogranak 6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo" style="cursor:pointer" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Aleksići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree" style="cursor:pointer" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Dapčevići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour" style="cursor:pointer" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Ivančevići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFive" style="cursor:pointer" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Jovičići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSix" style="cursor:pointer" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Klać
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSeven" style="cursor:pointer" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Lučići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingEight" style="cursor:pointer" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Pljošte
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingNine" style="cursor:pointer" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Prentovići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTen" style="cursor:pointer" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Popovići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingEleven" style="cursor:pointer" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Raičkovići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwelve" style="cursor:pointer" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Stojanovići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThirteen" style="cursor:pointer" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Šćepančevići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFourteen" style="cursor:pointer" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Vulovići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFifteen" style="cursor:pointer" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen" role="button">
+                    <div class="row" style="height:35px">
+                        <h6 class="mb-0 ml-2 mt-2">
+                            Živanovići
+                        </h6>
+                        <span class="badge badge-success badge-pill ml-auto mt-2" style="height:20px">0</span>
+                    </div>
+                </div>
+                <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordion">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Trenutno nema ogranaka</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-8 ml-auto"><iframe id="excelProstor" class="col-md-12" height="800" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLmhH5Uyf0RJMiD2AJ-AofO2gtKt045SSY3oKaHqhQVibJrjQ4sCYC-O_Qh8VN_6JADgqqktRHcoa2/pubhtml?widget=true&amp;headers=false"></iframe></div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Obavještenje</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Izrada ovog ogranka je u toku.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Zatvori</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-2 mb-4">
+        <a class="btn btn-dark text-white font-weight-bold" asp-action="tekstovi" asp-controller="home">Nazad na istoriju</a>
+    </div>
+</div>
+@*<div class="mx-auto hedr">
+
+</div>*@
+@section Scripts
+{
+    <script>
+        function proslediExcel(idClicked) {
+            var dokument = document.getElementById('excelProstor');
+            var current = document.getElementsByClassName("excelActive");
+            if (current.length > 0) {
+                current[0].className = current[0].className.replace("excelActive", "");               
+            }
+            
+            if (idClicked == '1e1') {                
+                dokument.src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSLmhH5Uyf0RJMiD2AJ-AofO2gtKt045SSY3oKaHqhQVibJrjQ4sCYC-O_Qh8VN_6JADgqqktRHcoa2/pubhtml?widget=true&amp;headers=false";
+                $('#1e1').addClass('excelActive');
+            }
+            else if (idClicked == '1e2') {
+                dokument.src = "";
+                
+                $('#1e2').addClass('excelActive');
+            }
+            else if (idClicked == '1e3') {
+                dokument.src = "";
+                
+                $('#1e3').addClass('excelActive');
+            }
+            else if (idClicked == '1e4') {
+                dokument.src = "";
+                
+                $('#1e4').addClass('excelActive');
+            }
+            else if (idClicked == '1e5') {
+                dokument.src = "";
+                
+                $('#1e5').addClass('excelActive');
+            }
+            else if (idClicked == '1e6') {
+                dokument.src = "";
+                
+                $('#1e6').addClass('excelActive');
+            }
+        }
+    </script>
+}

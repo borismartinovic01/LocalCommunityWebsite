@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Atrakcije";
+}
+@*<div class="mx-auto hedr">
+
+</div>*@
+<div class="teloVesti">
+    <div class="container">
+        <div style="text-align:center">
+        </div>
+        <div class="card-deck">
+            <div class="card m-4 mx-auto border-white" style="min-width: 18rem; max-width:30.5%;">
+                <div class="card-body mx-auto">
+                    <h4 class="card-title">Zip-Line</h4>
+                    <p class="card-text">
+                        Avantura vožnje iznad provalije ispod Ođe.
+                    </p>
+                </div>
+            </div>
+            <div class="card m-4 mx-auto border-white" style="min-width: 18rem; max-width:30.5%;">
+                <div class="card-body mx-auto">
+                    <h4 class="card-title">Paraglajding</h4>
+                    <p class="card-text">
+                        Najljepši pogled na Mediteran.
+                    </p>
+                </div>
+            </div>
+            <div class="card m-4 mx-auto border-white" style="min-width: 18rem; max-width:30.5%;">
+                <div class="card-body mx-auto">
+                    <h4 class="card-title">Pješačke staze</h4>
+                    <p class="card-text">
+                        Ako želite prema Lovćenu ili prema Rumiji Brajići su najbolja polazna tačka.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-container fade-in">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(../images/paragliding-4497256_640.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(../images/zipline-4135588_640.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(../images/wanderer-455338_640.jpg)"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+<br />
+@*<div class="mx-auto hedr">
+
+</div>*@
+@section Scripts{
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            simulateTouch: false,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+}

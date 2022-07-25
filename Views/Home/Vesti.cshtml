@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Vesti>
+@inject SignInManager<IdentityUser> signInManager;
+@{ 
+    ViewBag.Title = "Vijesti";
+}
+@*<div class="mx-auto hedr">
+
+</div>*@
+<div class="teloVestiNew mb-4">
+    <!--next to class container add ml-1-->
+        <div class="container">
+            <div style="text-align:center">
+                <h1 class="text-dark">Vijesti</h1>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <a class="btn btn-primary text-white" asp-action="VestCreate" asp-controller="administration">Dodaj vijest</a>
+                }
+            </div>
+            <div class="card-deck">
+                @foreach (var mojModel in Model.Reverse())
+                {
+                    var photoPath = "~/vestiPictures/" + (mojModel.PhotoPath);
+                    <div class="card m-4 mx-auto" style="min-width: 18rem; max-width:30.5%;">
+                        <img src="@photoPath" class="card-img-top vestiSlika" asp-append-version="true">
+                        <div class="card-body">
+                            <h4 class="card-title">@mojModel.Naslov</h4>
+                            <p class="card-text">@mojModel.Tekst</p>
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <span class="author">
+                                    <a><i class="fas fa-user"></i> @mojModel.Autor</a>
+                                </span>
+                                <span class="time float-right">
+                                    <a><i class="far fa-clock"></i> @mojModel.Datum</a>
+                                </span>
+                            </div>
+                            @if (signInManager.IsSignedIn(User))
+                            {
+                                <div class="text-center">
+                                    <form asp-action="DeleteVest" asp-controller="administration" asp-route-id="@mojModel.Id" method="post">
+                                        <a asp-action="VestEdit" asp-controller="administration" asp-route-id="@mojModel.Id" class="btn btn-primary m-1 text-white">Izmijeni</a>
+                                        <span style="display:none" id="confirmDeleteSpan_@mojModel.Id">
+                                            <span>Jeste li sigurni?</span>
+                                            <button type="submit" class="btn btn-danger">Da</button>
+                                            <span class="btn btn-primary" onclick="confirmDelete('@mojModel.Id',false)">Ne</span>
+                                        </span>
+                                        <span id="deleteSpan_@mojModel.Id">
+                                            <span class="btn btn-danger" onclick="confirmDelete('@mojModel.Id',true)">Obriši</span>
+                                        </span>
+                                    </form>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        @*<div class="ml-sm-1 mr-sm-3 reklameVesti">
+            <div class="">
+
+            </div>
+            <div class="">
+
+            </div>
+        </div>*@
+</div>
+@*<div class="mx-auto hedr">
+
+</div>*@

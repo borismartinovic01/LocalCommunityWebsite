@@ -1,0 +1,784 @@
+﻿@{ 
+    ViewBag.Title = "Toponimi";
+}
+@*<div class="mx-auto hedr">
+
+</div>*@
+<div class="teloTopo">
+    @*<div class="ml-md-5 reklameVesti">
+        <div class="">
+
+        </div>
+    </div>*@
+    <div class="container mb-5" id="toponimiid">
+        <div style="text-align:center" class="mb-4">
+            <h1 class="text-dark">Toponimi</h1>
+        </div>
+        <!--col-lg-8-->
+        <div class="form-group col-lg-7 mx-auto">
+            <div class="row mx-auto">
+                <select name="state" id="maxRows" class="form-control col-4">
+                    <option value="5000">Svi redovi</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                </select>
+                <div class="input-group col-6 ml-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input class="form-control" id="myInput" type="text" placeholder="Traži..">
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--Col-lg-6-->
+        <table id="mytablee" class="table table-bordered col-lg-7 table-hover mx-auto">
+            <thead>
+                <tr>
+                    <th>Redni broj</th>
+                    <th>Naziv</th>
+
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <td>1</td>
+                    <td>Goli vrh/Trmanj</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Krastavi kam/krš</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Za Veljom glavicom</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Papratni dolac</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Lazina</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Štrbine</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Velja doca</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Vezana doca</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Skala</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Široka strana</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Na vrh odžaka</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Mala lazina</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Sjenokosi</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Mrtvica</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Papratna njiva</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Oraše</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Ledine</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Livade</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Pasiji dolac</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Ponovljivac</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Kruške</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Pobreža</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>Bojkov brijeg</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>Mrtvička voda</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>Bućin dolac</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>Mićanova glavica</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>Dugački krš</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>Na vrh ždrijela</td>
+                </tr>
+                <tr>
+                    <td>29</td>
+                    <td>Javrza</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>Košarice</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>Luža</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>Babin dolac</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>Mrtvička prodo</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>Plazna ploča</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>Lastvica</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>Kupusišta</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>Na vrh grede</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>Na vrh kule</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>Stara lazina</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>Granica</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>Kosmač</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>Koriz</td>
+                </tr>
+                <tr>
+                    <td>43</td>
+                    <td>Savin stočić</td>
+                </tr>
+                <tr>
+                    <td>44</td>
+                    <td>Ođa</td>
+                </tr>
+                <tr>
+                    <td>45</td>
+                    <td>U gornji krst</td>
+                </tr>
+                <tr>
+                    <td>46</td>
+                    <td>Krpašnjak</td>
+                </tr>
+                <tr>
+                    <td>47</td>
+                    <td>Baglav</td>
+                </tr>
+                <tr>
+                    <td>48</td>
+                    <td>U donji krst pod Ođom</td>
+                </tr>
+                <tr>
+                    <td>49</td>
+                    <td>Ulin brijeg</td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>Popovo ždrijelo</td>
+                </tr>
+                <tr>
+                    <td>51</td>
+                    <td>Tri vrela</td>
+                </tr>
+                <tr>
+                    <td>52</td>
+                    <td>Zagali guzica</td>
+                </tr>
+                <tr>
+                    <td>53</td>
+                    <td>Bokarine</td>
+                </tr>
+                <tr>
+                    <td>54</td>
+                    <td>Grkova voda</td>
+                </tr>
+                <tr>
+                    <td>55</td>
+                    <td>Barake</td>
+                </tr>
+                <tr>
+                    <td>56</td>
+                    <td>Predinski krš</td>
+                </tr>
+                <tr>
+                    <td>57</td>
+                    <td>Predinska ulica</td>
+                </tr>
+                <tr>
+                    <td>58</td>
+                    <td>Grot</td>
+                </tr>
+                <tr>
+                    <td>59</td>
+                    <td>Laćun</td>
+                </tr>
+                <tr>
+                    <td>60</td>
+                    <td>Na butigu</td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Na blok</td>
+                </tr>
+                <tr>
+                    <td>62</td>
+                    <td>Glatka glavica</td>
+                </tr>
+                <tr>
+                    <td>63</td>
+                    <td>Babina voda</td>
+                </tr>
+                <tr>
+                    <td>64</td>
+                    <td>Vjetrnik</td>
+                </tr>
+                <tr>
+                    <td>65</td>
+                    <td>(V)Laške rupe</td>
+                </tr>
+                <tr>
+                    <td>66</td>
+                    <td>(V)Laško ždrijelo</td>
+                </tr>
+                <tr>
+                    <td>67</td>
+                    <td>Kuliješ</td>
+                </tr>
+                <tr>
+                    <td>68</td>
+                    <td>Konjsko</td>
+                </tr>
+                <tr>
+                    <td>69</td>
+                    <td>Lazarev dolac</td>
+                </tr>
+                <tr>
+                    <td>70</td>
+                    <td>Česte bukve</td>
+                </tr>
+                <tr>
+                    <td>71</td>
+                    <td>Špadijerov dolac</td>
+                </tr>
+                <tr>
+                    <td>72</td>
+                    <td>Ogoreline</td>
+                </tr>
+                <tr>
+                    <td>73</td>
+                    <td>Debeli brijeg</td>
+                </tr>
+                <tr>
+                    <td>74</td>
+                    <td>Cmilov brijeg</td>
+                </tr>
+                <tr>
+                    <td>75</td>
+                    <td>Boljin</td>
+                </tr>
+                <tr>
+                    <td>76</td>
+                    <td>Menato počivalo</td>
+                </tr>
+                <tr>
+                    <td>77</td>
+                    <td>Mali pločnik</td>
+                </tr>
+                <tr>
+                    <td>78</td>
+                    <td>Veliki pločnik</td>
+                </tr>
+                <tr>
+                    <td>79</td>
+                    <td>Šiljevik</td>
+                </tr>
+                <tr>
+                    <td>80</td>
+                    <td>Grabovik</td>
+                </tr>
+                <tr>
+                    <td>81</td>
+                    <td>Stožića brijeg</td>
+                </tr>
+                <tr>
+                    <td>82</td>
+                    <td>Poljanice</td>
+                </tr>
+                <tr>
+                    <td>83</td>
+                    <td>Solioštica</td>
+                </tr>
+                <tr>
+                    <td>84</td>
+                    <td>Bartočina</td>
+                </tr>
+                <tr>
+                    <td>85</td>
+                    <td>Pasija jama</td>
+                </tr>
+                <tr>
+                    <td>86</td>
+                    <td>Tri studenca</td>
+                </tr>
+                <tr>
+                    <td>87</td>
+                    <td>Osijek</td>
+                </tr>
+                <tr>
+                    <td>88</td>
+                    <td>Petrovića voda</td>
+                </tr>
+                <tr>
+                    <td>89</td>
+                    <td>Šanik</td>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>Oništa</td>
+                </tr>
+                <tr>
+                    <td>91</td>
+                    <td>Grčka glavica</td>
+                </tr>
+                <tr>
+                    <td>92</td>
+                    <td>Đurov krst</td>
+                </tr>
+                <tr>
+                    <td>93</td>
+                    <td>Suvi potok</td>
+                </tr>
+                <tr>
+                    <td>94</td>
+                    <td>Glavlje</td>
+                </tr>
+                <tr>
+                    <td>95</td>
+                    <td>Jansko ždrijelo</td>
+                </tr>
+                <tr>
+                    <td>96</td>
+                    <td>Nehaj grad</td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td>Main grad</td>
+                </tr>
+                <tr>
+                    <td>98</td>
+                    <td>Uska prodo</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>Pepina valuga</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>Jezerca</td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Sniježnice</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Sjenčenur</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Dolovi</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>Paštrov do</td>
+                </tr>
+                <tr>
+                    <td>105</td>
+                    <td>Petrovića kamenica</td>
+                </tr>
+                <tr>
+                    <td>106</td>
+                    <td>Andrijska voda</td>
+                </tr>
+                <tr>
+                    <td>107</td>
+                    <td>Bakuljino guvno</td>
+                </tr>
+                <tr>
+                    <td>108</td>
+                    <td>Lede</td>
+                <tr>
+                    <td>109</td>
+                    <td>Vukadinova ulica</td>
+                </tr>
+                <tr>
+                    <td>110</td>
+                    <td>Bistijernica</td>
+                </tr>
+                <tr>
+                    <td>111</td>
+                    <td>Burin potok</td>
+                </tr>
+                <tr>
+                    <td>112</td>
+                    <td>Peranovića glavica</td>
+                </tr>
+                <tr>
+                    <td>113</td>
+                    <td>Vilina pećina</td>
+                </tr>
+                <tr>
+                    <td>114</td>
+                    <td>Na murve</td>
+                </tr>
+                <tr>
+                    <td>115</td>
+                    <td>Bogaljić</td>
+                </tr>
+                <tr>
+                    <td>116</td>
+                    <td>Vulovića doci</td>
+                </tr>
+                <tr>
+                    <td>117</td>
+                    <td>Ibričevica</td>
+                </tr>
+                <tr>
+                    <td>118</td>
+                    <td>Studenac</td>
+                </tr>
+                <tr>
+                    <td>119</td>
+                    <td>Podcrkalje</td>
+                </tr>
+                <tr>
+                    <td>120</td>
+                    <td>Gubavice</td>
+                </tr>
+                <tr>
+                    <td>121</td>
+                    <td>U bostane</td>
+                </tr>
+                <tr>
+                    <td>122</td>
+                    <td>Podkunjice</td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>Pepeljuše</td>
+                </tr>
+                <tr>
+                    <td>124</td>
+                    <td>Tiglarice</td>
+                </tr>
+                <tr>
+                    <td>125</td>
+                    <td>Đončine</td>
+                </tr>
+                <tr>
+                    <td>126</td>
+                    <td>U Đuroviće</td>
+                </tr>
+                <tr>
+                    <td>127</td>
+                    <td>Godice</td>
+                </tr>
+                <tr>
+                    <td>128</td>
+                    <td>Podkuće</td>
+                </tr>
+                <tr>
+                    <td>129</td>
+                    <td>Ponora</td>
+                </tr>
+                <tr>
+                    <td>130</td>
+                    <td>Bjelotor</td>
+                </tr>
+                <tr>
+                    <td>131</td>
+                    <td>Milanov dolac</td>
+                </tr>
+                <tr>
+                    <td>132</td>
+                    <td>Rogovi Živanovića</td>
+                </tr>
+                <tr>
+                    <td>133</td>
+                    <td>Krstac</td>
+                </tr>
+                <tr>
+                    <td>134</td>
+                    <td>Plužine</td>
+                </tr>
+                <tr>
+                    <td>135</td>
+                    <td>Boškovića rupe</td>
+                </tr>
+                <tr>
+                    <td>136</td>
+                    <td>Uglješići</td>
+                </tr>
+                <tr>
+                    <td>137</td>
+                    <td>Mole</td>
+                </tr>
+                <tr>
+                    <td>138</td>
+                    <td>Ćilik Ulik</td>
+                </tr>
+                <tr>
+                    <td>139</td>
+                    <td>Virovi</td>
+                <tr>
+                    <td>140</td>
+                    <td>Trljanka</td>
+                </tr>
+                <tr>
+                    <td>141</td>
+                    <td>Mala jeva</td>
+                </tr>
+                <tr>
+                    <td>142</td>
+                    <td>Velika jeva</td>
+                </tr>
+                <tr>
+                    <td>143</td>
+                    <td>Grab</td>
+                </tr>
+                <tr>
+                    <td>144</td>
+                    <td>Orlov krš</td>
+                </tr>
+                <tr>
+                    <td>145</td>
+                    <td>Navr luga</td>
+                </tr>
+                <tr>
+                    <td>146</td>
+                    <td>Crni krši</td>
+                </tr>
+                <tr>
+                    <td>147</td>
+                    <td>Zminja doca</td>
+                </tr>
+                <tr>
+                    <td>148</td>
+                    <td>Zminja glava</td>
+                </tr>
+                <tr>
+                    <td>149</td>
+                    <td>Karlovi krši</td>
+                </tr>
+                <tr>
+                    <td>150</td>
+                    <td>Seoca</td>
+                </tr>
+                <tr>
+                    <td>151</td>
+                    <td>Medovića torina</td>
+                </tr>
+                <tr>
+                    <td>152</td>
+                    <td>Mokri krši</td>
+                </tr>
+                <tr>
+                    <td>153</td>
+                    <td>Repišta</td>
+                </tr>
+                <tr>
+                    <td>154</td>
+                    <td>Seoštik</td>
+                </tr>
+                <tr>
+                    <td>155</td>
+                    <td>Padež</td>
+                </tr>
+                <tr>
+                    <td>156</td>
+                    <td>Kozjarev vrh</td>
+                </tr>
+                <tr>
+                    <td>157</td>
+                    <td>Strporove rupe</td>
+                </tr>
+                <tr>
+                    <td>158</td>
+                    <td>Prekočeva strana</td>
+                </tr>
+                <tr>
+                    <td>159</td>
+                    <td>Jabuka</td>
+                </tr>
+                <tr>
+                    <td>160</td>
+                    <td>Tatarija</td>
+                </tr>
+                <tr>
+                    <td>161</td>
+                    <td>Viškov dolac</td>
+                </tr>
+                <tr>
+                    <td>162</td>
+                    <td>Viškova skala</td>
+                </tr>
+                <tr>
+                    <td>163</td>
+                    <td>Njegalica</td>
+                </tr>
+                <tr>
+                    <td>164</td>
+                    <td>Romo ždrijelo</td>
+                </tr>
+                <tr>
+                    <td>165</td>
+                    <td>Roma strana</td>
+                </tr>
+                <tr>
+                    <td>166</td>
+                    <td>Đurđevo ždrijelo</td>
+                </tr>
+                <tr>
+                    <td>167</td>
+                    <td>Kadijina glavica</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination-container col-sm-6 mx-lg-auto">
+            <nav>
+                <ul class="pagination"></ul>
+            </nav>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <a class="btn btn-dark text-white font-weight-bold" asp-action="topopriroda" asp-controller="home">Nazad na prirodu</a>
+        </div>
+    </div>
+    @*<div class="mr-md-5 reklameVesti">
+        <div class="">
+
+        </div>
+    </div>*@
+</div>
+@*<div class="mx-auto hedr">
+
+</div>*@
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            
+        });
+        var table = '#mytablee'
+        $('#maxRows').on('change', function () {
+            $('.pagination').html('')
+            var trnum = 0
+            var maxRows = parseInt($(this).val())
+            var totalRows = $(table + ' tbody tr').length
+            $(table + ' tr:gt(0)').each(function () {
+                trnum++
+                if (trnum > maxRows) {
+                    $(this).hide()
+                }
+                if (trnum <= maxRows) {
+                    $(this).show()
+                }
+            })
+            if (totalRows > maxRows) {
+                var pagenum = Math.ceil(totalRows / maxRows)
+                for (var i = 1; i <= pagenum;) {
+                    $('.pagination').append('<li data-page="' + i + '" class="page-item">\<a class="page-link">' + i++ + '<span class="sr-only">(current)</a></span>\</li>').show()
+
+                }
+            }
+            $('.pagination li:first-child').addClass(' active')
+            $('.pagination li').on('click', function () {
+                var pageNum = $(this).attr('data-page')
+                var trIndex = 0;
+                $('.pagination li').removeClass('active')
+                $(this).addClass(' active');
+                $(table + ' tr:gt(0)').each(function () {
+                    trIndex++
+                    if (trIndex > (maxRows * pageNum) || trIndex <= ((maxRows * pageNum) - maxRows)) {
+                        $(this).hide()
+                    }
+                    else {
+                        $(this).show()
+                    }
+                })
+            })
+        })
+    </script>
+}
+

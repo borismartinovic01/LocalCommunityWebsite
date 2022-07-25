@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Sponzor>
+@inject SignInManager<IdentityUser> signInManager;
+@{ 
+    ViewBag.Title = "Sponzori";
+}
+<div class="teloVesti">
+    <div class="container">
+        <div style="text-align:center">
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="btn btn-primary text-white" asp-action="SponzorCreate" asp-controller="administration">Dodaj sponzora</a>
+            }
+        </div>
+        <div class="card-deck">
+            @foreach (var mojModel in Model)
+            {
+                var photoPath = "~/spPictures/" + (mojModel.PhotoPath);
+            <div class="card m-5 mx-auto border-white" style="min-width:45.5%; max-width:46.5%;">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="@photoPath" class="card-img" asp-append-version="true"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-body mx-auto">
+                            <h4 class="card-title">@mojModel.Naziv</h4>
+                            <p>
+                                <i class="fas fa-home"></i> @mojModel.Adresa
+                            </p>
+                            <p>
+                                <i class="fas fa-phone"></i> @mojModel.Telefon
+                            </p>
+                            @if (mojModel.Email != null)
+                            {
+                                <p>
+                                    <i class="far fa-envelope"></i> @mojModel.Email
+                                </p>
+                            }
+                            @if (mojModel.Link != null)
+                            {
+                                <p><a href="@mojModel.Link">@mojModel.Link</a></p>
+                            }
+                            @if (mojModel.Instagram != null || mojModel.Facebook != null || mojModel.Twitter != null)
+                            {
+                                <p>
+                                    @if (mojModel.Instagram != null)
+                                    {
+                                        <a href="@mojModel.Instagram" class="text-dark" style="font-size:20px"><i class="fab fa-instagram"></i></a>
+                                    }
+
+                                    @if (mojModel.Facebook != null)
+                                    {
+                                        <a href="@mojModel.Facebook" class="text-dark" style="font-size:20px"><i class="fab fa-facebook-square"></i></a>
+                                    }
+                                    @if (mojModel.Twitter != null)
+                                    {
+                                        <a href="@mojModel.Twitter" class="text-dark" style="font-size:20px"><i class="fab fa-twitter-square"></i></a>
+                                    }
+                                </p>
+                            }
+                        </div>
+                    </div>
+                </div>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <div class="card-footer text-center">
+                        <form asp-action="DeleteSponzor" asp-controller="administration" asp-route-id="@mojModel.Id" method="post">
+                            <a asp-action="SponzorEdit" asp-controller="administration" asp-route-id="@mojModel.Id" class="btn btn-primary m-1 text-white">Izmijeni</a>
+                            <span style="display:none" id="confirmDeleteSpan_@mojModel.Id">
+                                <span>Jeste li sigurni?</span>
+                                <button type="submit" class="btn btn-danger">Da</button>
+                                <span class="btn btn-primary" onclick="confirmDelete('@mojModel.Id',false)">Ne</span>
+                            </span>
+                            <span id="deleteSpan_@mojModel.Id">
+                                <span class="btn btn-danger" onclick="confirmDelete('@mojModel.Id',true)">Obriši</span>
+                            </span>
+                        </form>
+                    </div>
+                }
+            </div>
+            }
+        </div>
+    </div>
+</div>

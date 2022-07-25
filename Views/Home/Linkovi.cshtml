@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Link>
+@inject SignInManager<IdentityUser> signInManager;
+@{
+    ViewBag.Title = "Linkovi";
+}
+@*<div class="mx-auto hedr">
+
+    </div>*@
+<div class="teloVestiNew mb-4">
+    <!--next to class container add ml-1-->
+    <div class="container">
+        <div class="heading">
+            <br />
+            <br />
+            <h1 class="text-dark">Linkovi</h1>
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="btn btn-primary text-white" asp-action="LinkCreate" asp-controller="administration">Dodaj link</a>
+            }
+        </div>
+        <br />
+            @foreach (var mojModel in Model.Reverse())
+            {
+        <h3 class="ml-1">@mojModel.Naslov</h3>
+        <a href="@mojModel.Li" class="ml-1" target="_blank" rel="noopener noreferrer">@mojModel.Li</a>
+        <br />
+        @if (signInManager.IsSignedIn(User))
+        {
+            <div class="ml-1">
+                <form asp-action="DeleteLink" asp-controller="administration" asp-route-id="@mojModel.Id" method="post">
+                    <a asp-action="LinkEdit" asp-controller="administration" asp-route-id="@mojModel.Id" class="btn btn-primary m-1 text-white">Izmijeni</a>
+                    <span style="display:none" id="confirmDeleteSpan_@mojModel.Id">
+                        <span>Jeste li sigurni?</span>
+                        <button type="submit" class="btn btn-danger">Da</button>
+                        <span class="btn btn-primary" onclick="confirmDelete('@mojModel.Id',false)">Ne</span>
+                    </span>
+                    <span id="deleteSpan_@mojModel.Id">
+                        <span class="btn btn-danger" onclick="confirmDelete('@mojModel.Id',true)">Obriši</span>
+                    </span>
+                </form>
+            </div>
+        }
+    <hr />
+            }
+    </div>
+</div>

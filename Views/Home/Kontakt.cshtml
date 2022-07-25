@@ -1,0 +1,39 @@
+﻿@model KontaktPodaciViewModel
+@{
+    var Prazno = "";
+    ViewBag.Title = "Kontakt";
+}
+@*<div class="mx-auto hedr">
+
+</div>*@
+<div class="container" id="kontaktid">
+    <div class="contact-box mx-auto">
+        <div class="left">
+            <div class="infoPodaci">
+                <h3>Info</h3>
+                <h5>sajtbrajici@gmail.com</h5>
+            </div>
+        </div>
+        <form asp-action="kontakt" asp-controller="home" method="post" id="kkk">
+            <div class="right">
+                <h2>Kontaktirajte nas</h2>
+                <input type="text" class="field" placeholder="Ime" asp-for="Ime" value="@Prazno" />
+                <input type="text" class="field" placeholder="Email" asp-for="Email" value="@Prazno" />
+                <textarea id="problem" class="field area" placeholder="Poruka" asp-for="Poruka"></textarea>
+                <button class="btn btn-success col-md-12 col-sm-10">Pošalji</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+@*<div class="mx-auto hedr">
+
+</div>*@
+@section Scripts{
+    <script>
+        document.getElementById("problem").innerHTML = "";
+    </script>
+}

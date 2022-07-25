@@ -1,0 +1,56 @@
+﻿@model UmjetnickaSlikaEditViewModel
+@{
+    ViewBag.Title = "Izmeni";
+    var photoPath = "~/umPictures/" + Model.ExistingPhotoPath;
+}
+<div class="telo">
+    <form enctype="multipart/form-data" asp-controller="administration" asp-action="UmjetnickaSlikaEdit" method="post" class="mt-3">
+        <input hidden asp-for="Id" />
+        <input hidden asp-for="ExistingPhotoPath" />
+        <div class="form-group row">
+            <label asp-for="Naslov" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Naslov" class="form-control" placeholder="Name" />
+                <span asp-validation-for="Naslov" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Opis" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <textarea class="form-control" rows="4" asp-for="Opis"></textarea>
+                <span asp-validation-for="Opis" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Slika" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input asp-for="Slika" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Kliknite ovde da zamenite sliku..</label>
+                    <span asp-validation-for="Slika" class="text-danger"></span>
+
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group row col-sm-4">
+            <img style="width:400px;height:auto" src="@photoPath" class="imageThumbnail" asp-append-version="true" />
+        </div>    <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="mx-auto">
+                <button type="submit" class="btn btn-primary m-1">Izmeni</button>
+                <a asp-controller="home" asp-action="UmjetnickeSlike" class="btn btn-danger text-white m-1">Odustani</a>
+            </div>
+        </div>
+        @section Scripts{
+            <script>
+                $(document).ready(function () {
+                    $('.custom-file-input').on("change", function () {
+                        var fileName = $(this).val().split("\\").pop();
+                        $(this).next('.custom-file-label').html(fileName);
+                    });
+                });
+            </script>
+        }
+    </form>
+</div>
