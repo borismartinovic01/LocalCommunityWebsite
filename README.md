@@ -6,7 +6,7 @@ Link: https://brajici.me/
 
 ### General Info
 ***
-Local community website and simple CRUD application for content management behind it using MVC architecture.
+Local community website and simple CRUD application for content management behind it.
 
-Built from scratch in .NET Core on backend and plain Javascript on frontend. MSSQL Server is used for managing data.
+Built from scratch in .NET Core on backend and plain Javascript on frontend, using MVC architecture. MSSQL Server is used for managing data.
 
